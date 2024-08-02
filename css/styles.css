@@ -498,6 +498,9 @@ h3 {
   align-items: center;
 }
 
+.feedback_form {
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -506,9 +509,10 @@ h3 {
   height: 100%;
   z-index: 999;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   pointer-events: none;
   transition: opacity 250ms ease-in-out;
 }
@@ -519,13 +523,17 @@ h3 {
 }
 
 .modal {
+  display: flex;
+  flex-direction: column;
   background-color: rgba(46, 47, 66, 0.4);
-  min-width: 408px;
+  max-width: 408px;
   height: 584px;
+  padding: 72px 24px 24px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background: #fcfcfc;
   border-radius: 4px;
+  position: absolute;
 }
 
 .modal-close {
@@ -547,4 +555,21 @@ h3 {
   height: 56px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background: #404bbf;
+}
+
+.form-label {
+  flex-direction: column;
+}
+
+.modal-close {
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  fill: #e7e9fc;
+  stroke-width: 1px;
+  stroke: rgba(0, 0, 0, 0.1);
+}
+.modal-close-img {
+  fill: #2e2f42;
 }
