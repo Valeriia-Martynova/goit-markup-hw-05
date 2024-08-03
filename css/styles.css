@@ -496,12 +496,55 @@ h3 {
 .container-link {
   width: 208px;
   align-items: center;
+  margin-right: 80px;
+}
+
+.container-email {
+  width: 453px;
+}
+.footer-input {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  width: 264px;
+  height: 40px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.text-plh::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+
+.btn-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 16px;
+  border-radius: 4px;
+  padding: 8px 24px;
+  width: 165px;
+  height: 40px;
+  background-color: #4d5ae5;
 }
 
 .feedback_form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 4px;
+  width: 360px;
+  height: 336px;
 }
 
 .modal-overlay {
+  background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
   left: 0;
@@ -512,9 +555,10 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  opacity: 1;
+  opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
@@ -534,6 +578,10 @@ h3 {
   background: #fcfcfc;
   border-radius: 4px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close {
@@ -543,26 +591,50 @@ h3 {
   fill: #2e2f42;
 }
 
-.btn-form {
+.main-model-text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #2e2f42;
+  padding-bottom: 16px;
+}
+
+.feedback_form {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  flex-direction: row;
-  gap: 10px;
+  flex-direction: column;
+  gap: 8px;
   border-radius: 4px;
-  padding: 16px 32px;
-  width: 169px;
-  height: 56px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  background: #404bbf;
+  width: 360px;
+  height: 336px;
 }
 
+label {
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
 .form-label {
+  display: flex;
   flex-direction: column;
+  position: relative;
+  width: 360px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
 }
 
 .modal-close {
-  border-radius: 4px;
   width: 24px;
   height: 24px;
   border-radius: 100%;
@@ -570,6 +642,78 @@ h3 {
   stroke-width: 1px;
   stroke: rgba(0, 0, 0, 0.1);
 }
-.modal-close-img {
+
+.icon-close {
   fill: #2e2f42;
+}
+
+.div-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  border-radius: 4px;
+  width: 360px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  border-radius: 4px;
+  width: 360px;
+  height: 16px;
+}
+
+.icon-checkbox {
+  fill: #f4f4fd;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+}
+
+.text_checkbox {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+.model-span {
+  line-height: 1.33;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #4d5ae5;
+}
+
+.model-span:hover,
+.model-span:focus {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-form {
+  display: block;
+  border-radius: 4px;
+  padding: 16px 32px;
+  width: 169px;
+  height: 56px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: #404bbf;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #fff;
+  margin: 24px auto;
+  cursor: pointer;
+}
+
+.btn-form:hover,
+.btn-form:focus {
+  transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
