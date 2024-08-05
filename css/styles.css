@@ -581,8 +581,8 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 1;
+
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -675,6 +675,7 @@ label {
 .form-label {
   display: block;
   flex-direction: column;
+  position: relative;
   margin-bottom: 4px;
   width: 100%;
   font-family: "Roboto", sans-serif;
@@ -691,7 +692,6 @@ label {
 }
 
 .div-form {
-  display: flex;
   position: relative;
   margin-bottom: 8px;
   gap: 8px;
@@ -760,20 +760,7 @@ label {
   margin-bottom: 24px;
 }
 
-.input-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.input-hidden:checked + .checkbox-text > .model-span {
+.visually-hidden:checked + .checkbox-text > .model-span {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
